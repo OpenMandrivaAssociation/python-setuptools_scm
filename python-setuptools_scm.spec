@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        %{version}
-Release:        1
+Release:        3
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 

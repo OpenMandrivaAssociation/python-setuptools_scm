@@ -2,11 +2,11 @@
 %global pypi_name setuptools_scm
 %define tarname setuptools-scm
 %global with_python2 1
-%define version 2.1.0
+%define version 3.3.3
 
 Name:           python-%{pypi_name}
 Version:        %{version}
-Release:        3
+Release:        1
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 
@@ -15,11 +15,11 @@ Url:            https://pypi.org/project/setuptools_scm/#files
 # See also      https://github.com/pypa/setuptools_scm
 Source0:        https://files.pythonhosted.org/packages/e5/62/f9e1ac314464eb5945c97542acb6bf6f3381dfa5d7a658de7730c36f31a1/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
-BuildRequires:  python3-devel
+BuildRequires:  pkgconfig(python)
 BuildRequires:  python-setuptools
  
 %if %{with_python2}
-BuildRequires:  python2-devel
+BuildRequires:  pkgconfig(python2)
 BuildRequires:  python2-setuptools
 %endif # if with_python2
 
@@ -57,7 +57,6 @@ pushd %{py2dir}
 popd
 %endif # with_python2
 
-
 %install
 
 %if %{with_python2}
@@ -68,12 +67,10 @@ popd
 
 %{__python} setup.py install --skip-build --root %{buildroot}
 
-
 %files
 %doc  README.rst CHANGELOG.rst LICENSE
 %{python_sitelib}/*/*
 #%%{python_sitelib}/pep8.py
-
 
 %if %{with_python2}
 %files -n python2-%{pypi_name}
@@ -81,4 +78,3 @@ popd
 %{python2_sitelib}/*/*
 #%%{python2_sitelib}/pep8.*
 %endif # with_python2
-

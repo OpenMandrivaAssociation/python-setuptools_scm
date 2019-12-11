@@ -2,11 +2,10 @@
 %global pypi_name setuptools_scm
 %define tarname setuptools-scm
 %global with_python2 1
-%define version 3.3.3
 
 Name:           python-%{pypi_name}
-Version:        %{version}
-Release:        1
+Version:        3.3.3
+Release:        2
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 

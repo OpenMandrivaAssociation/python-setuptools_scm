@@ -4,7 +4,7 @@
 %global with_python2 1
 
 Name:           python-%{pypi_name}
-Version:	3.5.0
+Version:	4.1.2
 Release:	1
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
@@ -12,7 +12,7 @@ Summary:        Tool to manage python package versions by scm tags
 License:        MIT
 Url:            https://pypi.org/project/setuptools_scm/#files
 # See also      https://github.com/pypa/setuptools_scm
-Source0:	https://files.pythonhosted.org/packages/b2/f7/60a645aae001a2e06cf4b8db2fba9d9f36b8fd378f10647e3e218b61b74b/setuptools_scm-3.5.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/cd/66/fa77e809b7cb1c2e14b48c7fc8a8cd657a27f4f9abb848df0c967b6e4e11/setuptools_scm-4.1.2.tar.gz
 BuildArch:      noarch
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python-setuptools

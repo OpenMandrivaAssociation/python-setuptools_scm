@@ -22,6 +22,9 @@ BuildRequires:  pkgconfig(python2)
 BuildRequires:  python2-setuptools
 %endif # if with_python2
 
+# FIXME why isn't this autodetected?
+Provides:	python3dist(setuptools-scm)
+
 
 %description
 Tool to manage python package versions by scm tags
@@ -30,6 +33,8 @@ Tool to manage python package versions by scm tags
 %if %{with_python2}
 %package -n     python2-%{pypi_name}
 Summary:        Tool to manage python package versions by scm tags 
+# FIXME why isn't this autodetected?
+Provides:	python2dist(setuptools-scm)
 
 %description -n python2-%{pypi_name}
 Tool to manage python package versions by scm tags

@@ -16,7 +16,7 @@ BuildRequires:  pkgconfig(python)
 BuildRequires:  python-setuptools
 BuildRequires:	python3dist(tomli)
 # FIXME why isn't this autodetected?
-#Provides:	python3dist(setuptools-scm)
+Provides:	python3dist(setuptools-scm) = %{EVRD}
 
 %description
 Tool to manage python package versions by scm tags

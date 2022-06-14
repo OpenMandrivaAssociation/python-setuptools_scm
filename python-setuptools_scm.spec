@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:	6.4.2
-Release:	1
+Release:	2
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 
@@ -17,6 +17,7 @@ BuildRequires:  python-setuptools
 BuildRequires:	python3dist(tomli)
 # FIXME why isn't this autodetected?
 Provides:	python3dist(setuptools-scm) = %{EVRD}
+Provides:	python%{pyver}dist(setuptools-scm) = %{EVRD}
 
 %description
 Tool to manage python package versions by scm tags

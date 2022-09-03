@@ -2,8 +2,8 @@
 %define tarname setuptools-scm
 
 Name:           python-%{pypi_name}
-Version:	6.4.2
-Release:	2
+Version:	7.0.5
+Release:	1
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 

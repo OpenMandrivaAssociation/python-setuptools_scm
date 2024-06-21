@@ -2,8 +2,8 @@
 %define tarname setuptools-scm
 
 Name:           python-%{pypi_name}
-Version:	7.1.0
-Release:	2
+Version:	8.1.0
+Release:	1
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 
@@ -14,24 +14,18 @@ Source0:	https://files.pythonhosted.org/packages/source/s/setuptools_scm/setupto
 BuildArch:      noarch
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python-setuptools
-BuildRequires:	python3dist(tomli)
+BuildRequires:	python%{pyver}dist(tomli)
 # FIXME why isn't this autodetected?
 Provides:	python3dist(setuptools-scm) = %{EVRD}
 Provides:	python%{pyver}dist(setuptools-scm) = %{EVRD}
 Requires:	python%{pyver}dist(tomli)
 Requires:	python%{pyver}dist(typing-extensions)
+BuildSystem:	python
+
 %description
 Tool to manage python package versions by scm tags
 
-%prep
-%autosetup -p1 -n %{pypi_name}-%{version}
-
-%build
-python setup.py build
-
-%install
-python setup.py install --skip-build --root %{buildroot}
-
 %files
-%doc  README.rst CHANGELOG.rst LICENSE
-%{python_sitelib}/*/*
+%doc LICENSE
+%{python_sitelib}/setuptools_scm
+%{python_sitelib}/*.*-info

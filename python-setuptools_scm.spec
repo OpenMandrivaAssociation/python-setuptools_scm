@@ -2,7 +2,7 @@
 %define tarname setuptools-scm
 
 Name:           python-%{pypi_name}
-Version:	8.2.0
+Version:	9.2.2
 Release:	1
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
@@ -27,5 +27,6 @@ Tool to manage python package versions by scm tags
 
 %files
 %doc LICENSE
+%{_bindir}/setuptools-scm
 %{python_sitelib}/setuptools_scm
 %{python_sitelib}/*.*-info

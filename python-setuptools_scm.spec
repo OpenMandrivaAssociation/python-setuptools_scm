@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:	9.2.2
-Release:	1
+Release:	2
 Group:          Development/Python
 Summary:        Tool to manage python package versions by scm tags
 
@@ -13,10 +13,9 @@ Url:            https://pypi.org/project/setuptools_scm/#files
 Source0:	https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  pkgconfig(python)
-BuildRequires:  python-setuptools
+BuildRequires:  python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(tomli)
 # FIXME why isn't this autodetected?
-Provides:	python3dist(setuptools-scm) = %{EVRD}
 Provides:	python%{pyver}dist(setuptools-scm) = %{EVRD}
 Requires:	python%{pyver}dist(tomli)
 Requires:	python%{pyver}dist(typing-extensions)

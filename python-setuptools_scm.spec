@@ -1,32 +1,30 @@
-%global pypi_name setuptools_scm
-%define tarname setuptools-scm
+%define module setuptools-scm
+%define oname setuptools_scm
 
-Name:           python-%{pypi_name}
-Version:	9.2.2
-Release:	3
-Group:          Development/Python
-Summary:        Tool to manage python package versions by scm tags
+Name:		python-setuptools_scm
+Summary:	Tool to manage python package versions by scm tags
+Version:	10.0.5
+Release:	1
+Group:		Development/Python
+License:	MIT
+# See also https://github.com/pypa/setuptools_scm
+URL:		https://pypi.org/project/setuptools_scm
+Source0:	https://files.pythonhosted.org/packages/source/s/%{oname}/%{oname}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-License:        MIT
-Url:            https://pypi.org/project/setuptools_scm/#files
-# See also      https://github.com/pypa/setuptools_scm
-Source0:	https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-%{version}.tar.gz
-BuildArch:      noarch
+BuildSystem:	python
+BuildArch:	noarch
 BuildRequires:  pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:  python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(tomli)
-# FIXME why isn't this autodetected?
-Provides:	python%{pyver}dist(setuptools-scm) = %{EVRD}
+BuildRequires:	python%{pyver}dist(wheel)
+# keep provides for package compatibility re setuptools_scm
 Provides:	python%{pyver}dist(setuptools_scm) = %{EVRD}
-Requires:	python%{pyver}dist(tomli)
-Requires:	python%{pyver}dist(typing-extensions)
-BuildSystem:	python
 
 %description
-Tool to manage python package versions by scm tags
+Tool to manage python package versions by scm tags.
 
 %files
-%doc LICENSE
-%{_bindir}/setuptools-scm
-%{python_sitelib}/setuptools_scm
-%{python_sitelib}/*.*-info
+%{_bindir}/%{module}
+%{python_sitelib}/%{oname}
+%{python_sitelib}/%{oname}-%{version}.dist-info

@@ -13,10 +13,11 @@ Source0:	https://files.pythonhosted.org/packages/source/s/%{oname}/%{oname}-%{ve
 
 BuildSystem:	python
 BuildArch:	noarch
-BuildRequires:  pkgconfig(python)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{pyver}dist(pip)
-BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(tomli)
+BuildRequires:	python%{pyver}dist(vcs-versioning)
 BuildRequires:	python%{pyver}dist(wheel)
 # keep provides for package compatibility re setuptools_scm
 Provides:	python%{pyver}dist(setuptools_scm) = %{EVRD}

@@ -3,7 +3,7 @@
 
 Name:		python-setuptools_scm
 Summary:	Tool to manage python package versions by scm tags
-Version:	10.0.5
+Version:	10.2.1
 Release:	1
 Group:		Development/Python
 License:	MIT
